@@ -426,7 +426,7 @@ module Spira
           #       and not mixing the both in @properties.
           repo.delete [subject, property[:predicate], nil]
           value.each do |val|
-            store_attribute(name, val, property[:predicate], repo)
+            store_attribute(name, val.dup, property[:predicate], repo)
           end
         else
           if attribute_changed?(name.to_s)
